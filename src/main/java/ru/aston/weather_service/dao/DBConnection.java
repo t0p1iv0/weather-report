@@ -1,5 +1,6 @@
 package ru.aston.weather_service.dao;
 
+import org.postgresql.Driver;
 import ru.aston.weather_service.config.DBConfig;
 
 import java.sql.Connection;
@@ -18,6 +19,7 @@ public class DBConnection {
             return connection;
         } else {
             try {
+                DriverManager.registerDriver(new Driver());
                 return connection = DriverManager.getConnection(
                         config.getUrl(), config.getLogin(), config.getPassword()
                 );
