@@ -21,7 +21,6 @@ public class WeatherService {
     private final WeatherApiProperties props = new WeatherApiProperties();
     private final ObjectMapper mapper = new JsonMapper();
     private final HttpClient client = HttpClient.newHttpClient();
-
     private final Logger logger = Logger.getLogger(this.getClass().getName());
 
     public String getCurrentWeather(HttpServletRequest req) {
